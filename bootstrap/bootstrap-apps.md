@@ -75,21 +75,5 @@ If thats done we can now deploy our first apps for the initial cluster.
 
 
 ```bash
-nodes=(
-    "1"
-    "2"
-    "3"
-)
-
-ips=(
-    "113"
-    "120"
-    "222"
-)
-
-for node in "${nodes[@]}"; do
-    for ip in "${ips[@]}"; do
-        talosctl apply-config --nodes 45.145.226."$ip" --file clusterconfig/cloud-core-cloud-core-0"$node".yaml 
-    done
-done
+helmfile --file "${helmfile_file}" sync --hide-notes
 ```

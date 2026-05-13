@@ -29,10 +29,10 @@ spec:
     ipv4:
       enabled: true
     ipv6:
-      enabled: true
+      enabled: false
     k8s:
       requireIPv4PodCIDR: true
-      requireIPv6PodCIDR: true
+      requireIPv6PodCIDR: false
 
     routingMode: tunnel
     tunnelProtocol: vxlan
@@ -68,11 +68,11 @@ spec:
 
     # Observability
     hubble:
-      enabled: true
+      enabled: false
       relay:
-        enabled: true
+        enabled: false
       ui:
-        enabled: true
+        enabled: false
       metrics:
         enabled:
           - dns
@@ -91,7 +91,7 @@ spec:
         trustCRDsExist: true
 
     operator:
-      replicas: 3
+      replicas: 2
       rollOutPods: true
       dashboards:
         enabled: true
