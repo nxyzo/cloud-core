@@ -21,7 +21,7 @@ spec:
       hostRoot: /sys/fs/cgroup
 
     kubeProxyReplacement: true
-    kubeProxyReplacementHealthzBindAddr: 0.0.0.0:10256
+    kubeProxyReplacementHealthzBindAddr: 127.0.0.1:10256
     socketLB:
       enabled: true
       hostNamespaceOnly: true
