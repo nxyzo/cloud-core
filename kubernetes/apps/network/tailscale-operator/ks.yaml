@@ -5,7 +5,7 @@ metadata:
   name: tailscale-operator
 spec:
   interval: 1h
-  path: ./kubernetes/apps/kyverno/tailscale-operator/app
+  path: ./kubernetes/apps/network/tailscale-operator/app
   postBuild:
     substituteFrom:
       - name: cluster-secrets
