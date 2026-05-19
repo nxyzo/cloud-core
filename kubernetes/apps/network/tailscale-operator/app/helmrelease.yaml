@@ -1,0 +1,22 @@
+---
+# yaml-language-server: $schema=https://lds-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: tailscale
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: tailscale-operator
+      version: 1.96.5
+      sourceRef:
+        kind: HelmRepository
+        name: tailscale
+        namespace: network
+  values:
+    installCRDs: true
+    defaultTags:
+      - "tag:k8s-operator"
+      - "tag:cloud-core"
+    oauthSecretVolume: {}
